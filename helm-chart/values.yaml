@@ -1,0 +1,19 @@
+# Default values
+replicaCount: 1
+
+image:
+  repository: fastapi-hello  # Will be overridden in CI with real image
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  className: "nginx"  # adjust if using ALB, etc.
+  host: fastapi.local
+
+networkPolicy:
+  enabled: true
