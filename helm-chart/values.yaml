@@ -1,8 +1,7 @@
-# Default values
 replicaCount: 1
 
 image:
-  repository: fastapi-hello  # Will be overridden in CI with real image
+  repository: fastapi-hello
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -12,7 +11,7 @@ service:
 
 ingress:
   enabled: true
-  className: "nginx"  # adjust if using ALB, etc.
+  className: nginx
   host: fastapi.local
 
 networkPolicy:
